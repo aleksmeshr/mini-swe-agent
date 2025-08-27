@@ -6,12 +6,8 @@ import importlib
 from minisweagent import Environment
 
 _ENVIRONMENT_MAPPING = {
-    "docker": "minisweagent.environments.docker.DockerEnvironment",
-    "singularity": "minisweagent.environments.singularity.SingularityEnvironment",
     "local": "minisweagent.environments.local.LocalEnvironment",
-    "swerex_docker": "minisweagent.environments.extra.swerex_docker.SwerexDockerEnvironment",
 }
-
 
 def get_environment_class(spec: str) -> type[Environment]:
     full_path = _ENVIRONMENT_MAPPING.get(spec, spec)
