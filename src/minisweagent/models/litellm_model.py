@@ -46,6 +46,7 @@ class LitellmModel:
                 litellm.exceptions.ContextWindowExceededError,
                 litellm.exceptions.APIError,
                 litellm.exceptions.AuthenticationError,
+                litellm.exceptions.BadRequestError,
                 KeyboardInterrupt,
             )
         ),

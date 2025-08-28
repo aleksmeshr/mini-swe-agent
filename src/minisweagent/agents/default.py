@@ -111,9 +111,9 @@ class DefaultAgent:
 
     def execute_action(self, action: dict) -> dict:
         try:
-            print(f"Executing action: {action['action']}")
+            print(f"Executing action: `{action['action']}`")
             output = self.env.execute(action["action"])
-            print(f"Action output: {output}")
+            print(f"Action output: `{str(output).strip()[:40].strip()}`")
         except subprocess.TimeoutExpired as e:
             output = e.output.decode("utf-8", errors="replace") if e.output else ""
             raise ExecutionTimeoutError(
